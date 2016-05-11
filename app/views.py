@@ -13,3 +13,6 @@ from app.custom_forms import LoginForm
 @app.route('/')
 def start():
     return "string"
+@app.route('/test')
+def test_route():
+    return 'test string'
