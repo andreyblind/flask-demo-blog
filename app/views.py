@@ -10,9 +10,11 @@ from app.custom_forms import LoginForm
 #     return render_template('login.html',
 #         title = 'Sign In',
 #         form = form)
+
 @app.route('/')
-def start():
-    return "string"
-@app.route('/test')
-def test_route():
-    return 'test string'
+@app.route('/index')
+def index():
+    user = { 'nickname': 'Miguel' } # выдуманный пользователь
+    return render_template("index.html",
+        title = 'Home',
+        user = user)
