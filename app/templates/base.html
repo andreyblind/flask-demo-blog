@@ -6,9 +6,24 @@
     {% else %}
     <title>microblog</title>
     {% endif %}
+    <style type="text/css">
+      .menu{
+        background: silver;
+        border:1ps solid grey;
+      }
+      .menu a{
+        display:inline-block;
+        padding: 5px 15px 0 15px;
+      }
+      
+      .menu a:hover{
+        background:grey;
+        text-oratio:none;
+      }
+    </style>
   </head>
   <body>
-    <div style="background: silver;">Microblog: <a href="/index">Home</a></div>
+    <div style="">Microblog: <a href="/index">Home</a></div>
     <hr>
     {% block content %}{% endblock %}
   </body>
