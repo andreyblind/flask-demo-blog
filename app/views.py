@@ -14,7 +14,7 @@ from app.custom_forms import LoginForm
 @app.route('/')
 @app.route('/index')
 def index():
-    user = { 'nickname': 'Miguel' } # выдуманный пользователь
+    user = { 'nickname': 'Andrii' }
     return render_template("index.html",
         title = 'Home',
         user = user)
@@ -27,4 +27,5 @@ def login():
         return redirect('/index')
     return render_template('login.html', 
         title = 'Sign In',
-        form = form)
+        form = form,
+        providers = app.config['OPENID_PROVIDERS'])
