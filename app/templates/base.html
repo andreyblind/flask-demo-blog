@@ -9,7 +9,7 @@
     <style type="text/css">
       .menu{
         background: silver;
-        border:1ps solid grey;
+        border:1px solid grey;
       }
       .menu a{
         display:inline-block;
@@ -25,6 +25,15 @@
   <body>
     <div style="">Microblog: <a href="/index">Home</a></div>
     <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
     {% block content %}{% endblock %}
   </body>
 </html>
